@@ -1,0 +1,14 @@
+model:
+  d_model: 256
+  nhead: 8
+  num_layers: 4
+  max_length: 128
+
+training:
+  batch_size: 512
+  lr: 0.001
+  epochs: 15
+  num_samples: 30000
+
+output_dir: "./experiments"
+
