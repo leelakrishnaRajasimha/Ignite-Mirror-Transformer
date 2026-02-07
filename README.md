@@ -46,13 +46,14 @@ graph LR
 #### Training Metrics
 * Dataset Size: 30,000 synthetic samples.
 
-* Convergence: Final Cross-Entropy Loss of 0.0021 achieved after 15 epochs.
+* Convergence: Final Cross-Entropy Loss of 0.0014 achieved after 30 epochs.
 
 * Hardware: Optimized for execution on NVIDIA RTX 4050.
 
 #### Loss Curve Visualization
 * The following graph demonstrates the stable convergence and efficient learning rate of the implementation:
-<img width="3000" height="1800" alt="image" src="https://github.com/user-attachments/assets/f98171ff-b0b3-4ed3-95e8-3ab24ec7781c" />
+
+<img width="3000" height="1800" alt="image" src="https://github.com/user-attachments/assets/8dfede6e-5230-4f2b-adbc-7875a883a7e2" />
 
 
 ## Repository Structure
