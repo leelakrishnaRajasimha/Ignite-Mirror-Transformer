@@ -27,9 +27,13 @@ class MirrorDataset(Dataset):
         chars = torch.randint(3, 29, (self.seq_len ,))
         reversed_chars = torch.flip(chars, dims=[0])
 
-        return torch.cat([torch.tensor([SOS_TOKEN]), chars, torch.tensor([EOS_TOKEN]), reversed_chars])
-
-dataset = MirrorDataset(config["training"]["num_samples"], 10)
+        full_seq = torch.cat([torch.tensor([SOS_TOKEN]), chars, torch.tensor([EOS_TOKEN]), reversed_chars])
+        padding_size = (self.seq_len * 2 + 2) - len(full_seq)
+        if padding_size > 0:
+            full_seq = torch.cat([full_seq, torch.full((padding_size,), PAD_TOKEN)])
+        return full_seq
+        
+dataset = MirrorDataset(config["training"]["num_samples"], config["model"]["seq_len"])
 
 dataloader = DataLoader(dataset, batch_size=config["training"]["batch_size"], shuffle=True)
 

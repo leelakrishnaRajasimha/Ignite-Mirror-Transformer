@@ -3,11 +3,12 @@ model:
   nhead: 8
   num_layers: 4
   max_length: 128
+  seq_len: 10
 
 training:
   batch_size: 512
   lr: 0.001
-  epochs: 15
+  epochs: 30
   num_samples: 30000
 
 output_dir: "./experiments"
